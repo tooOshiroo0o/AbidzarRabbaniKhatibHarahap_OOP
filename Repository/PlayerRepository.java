@@ -54,14 +54,18 @@ public class PlayerRepository extends BaseRepository<Player, UUID> {
     }
 
     public List<Player> findAllByOrderByTotalCoinsDesc() {
+        int coinsCollected = 0;
         return map.values().stream()
-                .sorted(Comparator.comparingInt(Player::getTotalCoins).reversed())
+                .sorted(Comparator.comparingInt((Player player) -> player.getTotalCoins()).reversed())
                 .collect(Collectors.toList());
     }
 
     public List<Player> findAllByOrderByTotalDistanceTravelledDesc() {
+        int distanceTravelled = 0;
         return map.values().stream()
-                .sorted(Comparator.comparingInt(Player::getTotalDistance).reversed())
+                .sorted(Comparator.comparingInt((Player player) -> player.getTotalDistance()).reversed())
                 .collect(Collectors.toList());
     }
+
+
 }

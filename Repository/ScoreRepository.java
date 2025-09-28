@@ -86,4 +86,6 @@ public class ScoreRepository extends BaseRepository<Score, UUID> {
                 .mapToInt(Score::getDistance)
                 .sum();
     }
+
+
 }

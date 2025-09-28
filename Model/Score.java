@@ -67,7 +67,14 @@ public class Score implements ShowDetail {
 
     @Override
     public String toString() {
-        return String.format("Score(id=%s player=%s value=%d coins=%d dist=%d)",
-                scoreId, playerId, value, coinsCollected, distance);
+        return "Score ID: " + scoreId + "\n" +
+                "Player ID: " + playerId + "\n" +
+                "Score Value: " + value + "\n" +
+                "Coins Collected: " + coinsCollected + "\n" +
+                "Distance: " + distance + "\n" +
+                "Created At: " + createdAt + "\n";
     }
+
+
+
 }

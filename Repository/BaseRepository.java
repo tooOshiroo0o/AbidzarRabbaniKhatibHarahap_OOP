@@ -11,8 +11,14 @@ public abstract class BaseRepository<T, ID> {
     }
 
     public List<T> findAll() {
-        // return defensive copy
         return List.copyOf(list);
+    }
+
+    public void deleteById(ID id) {
+        T entity = map.remove(id);
+        if (entity != null) {
+            list.remove(entity);
+        }
     }
 
     public abstract void save(T entity);

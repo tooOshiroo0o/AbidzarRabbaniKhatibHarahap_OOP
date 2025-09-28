@@ -3,9 +3,7 @@ package Model;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
-/**
- * Player model used by repositories.
- */
+
 public class Player implements ShowDetail {
     private UUID playerId;
     private String username;
@@ -85,7 +83,27 @@ public class Player implements ShowDetail {
 
     @Override
     public String toString() {
-        return String.format("%s (id=%s) hs=%d coins=%d dist=%d",
-                username, playerId, highscore, totalCoins, totalDistance);
+        return "Player ID: " + playerId + "\n" +
+                "Username: " + username + "\n" +
+                "High Score: " + highscore + "\n" +
+                "Total Coins: " + totalCoins + "\n" +
+                "Total Distance: " + totalDistance + "\n" +
+                "Created At: " + createdAt + "\n";
     }
+
+
+    public void setPlayerId(UUID playerId) {
+    }
+
+    public void setHighscore(int max) {
+    }
+
+    public void setTotalCoins(int i) {
+
+    }
+
+    public void setTotalDistance(int i) {
+
+    }
+
 }
