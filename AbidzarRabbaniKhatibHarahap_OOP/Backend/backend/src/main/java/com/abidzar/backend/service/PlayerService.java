@@ -2,32 +2,21 @@ package com.abidzar.backend.service;
 
 import com.abidzar.backend.model.Player;
 import com.abidzar.backend.repository.PlayerRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
-
-@Autowired
+@Service
 public class PlayerService {
-    private final PlayerRepository playerRepository;
 
-    public PlayerService(PlayerRepository playerRepository) {
-        this.playerRepository = playerRepository;
-    }
+    @Autowired
+    private PlayerRepository playerRepository;
 
-    if(playerRepository.existsByUsername(player.getUsername()))
-
-    {
-        throw new RuntimeException("Username already exists: " + player.getUsername());
-    }
-
-    public Player createPlayer(Player player) {
-        if (existsByUsername(player.getUsername())) {
-            throw new RuntimeException("Username already registered: " + player.getUsername());
-        }
-        return playerRepository.save(player);
-        ;
+    public List<Player> getAllPlayers() {
+        return playerRepository.findAll();
     }
 
     public Optional<Player> getPlayerById(UUID playerId) {
@@ -38,69 +27,69 @@ public class PlayerService {
         return playerRepository.findByUsername(username);
     }
 
-    public List<Player> getAllPlayers() {
-        return playerRepository.findAll();
+    public Player createPlayer(Player player) {
+        if (playerRepository.existsByUsername(player.getUsername())) {
+            throw new RuntimeException("Username already exists: " + player.getUsername());
+        }
+        return playerRepository.save(player);
     }
 
     public Player updatePlayer(UUID playerId, Player updatedPlayer) {
-        Player existing = playerRepository.findById(playerId)
-                .orElseThrow(() -> new RuntimeException("Player not found"));
+        Player existingPlayer = playerRepository.findById(playerId)
+                .orElseThrow(() -> new RuntimeException("Player not found with ID: " + playerId));
+
         if (updatedPlayer.getHighScore() != null) {
             existingPlayer.setHighScore(updatedPlayer.getHighScore());
         }
-        updatedPlayer.setPlayerId(playerId);
-        playerRepository.save(updatedPlayer);
-        return updatedPlayer;
+        if (updatedPlayer.getTotalCoins() != null) {
+            existingPlayer.setTotalCoins(updatedPlayer.getTotalCoins());
+        }
+        if (updatedPlayer.getTotalDistanceTravelled() != null) {
+            existingPlayer.setTotalDistanceTravelled(updatedPlayer.getTotalDistanceTravelled());
+        }
+
+        return playerRepository.save(existingPlayer);
     }
 
     public void deletePlayer(UUID playerId) {
-        Player player = playerRepository.(!playerRepository.existsById(playerId)).-> new RuntimeException("Player not found with ID: " + playerId))
+        if (!playerRepository.existsById(playerId)) {
+            throw new RuntimeException("Player not found with ID: " + playerId);
+        }
         playerRepository.deleteById(playerId);
-    }
-    public void deletePlayerByUsername(String username) {
-        playerRepository.findByUsername(username)
-                .ifPresent(player -> playerRepository.deleteById(player.getPlayerId()));
     }
 
     public Player updatePlayerStats(UUID playerId, Integer scoreValue, Integer coinsCollected, Integer distanceTravelled) {
-        Player player = playerRepository.findById(playerId)
-                .orElseThrow(() -> new RuntimeException("Player not found"));
+        Player existingPlayer = playerRepository.findById(playerId)
+                .orElseThrow(() -> new RuntimeException("Player not found with ID: " + playerId));
 
-        player.setHighscore(Math.max(player.getHighscore(), scoreValue));
-        player.setTotalCoins(player.getTotalCoins() + coinsCollected);
-        player.setTotalDistance(player.getTotalDistance() + distanceTravelled);
+        if (scoreValue != null) {
+            existingPlayer.setHighScore(scoreValue);
+        }
+        if (coinsCollected != null) {
+            existingPlayer.setTotalCoins(coinsCollected);
+        }
+        if (distanceTravelled != null) {
+            existingPlayer.setTotalDistanceTravelled(distanceTravelled);
+        }
 
-        playerRepository.save(player);
+        return playerRepository.save(existingPlayer);
     }
 
+    public boolean isUsernameExists(String username) {
+        return playerRepository.existsByUsername(username);
+    }
 
     public List<Player> getLeaderboardByHighScore(int limit) {
-        return playerRepository.findTopPlayersByHighScore(limit);
+        // fetch all and limit manually
+        List<Player> all = playerRepository.findAllByOrderByHighScoreDesc();
+        return all.stream().limit(limit).toList();
     }
 
     public List<Player> getLeaderboardByTotalCoins() {
-        if (getLeaderboardByTotalCoins.getHighScore() != null) {
-            existingPlayer.setHighScore(getLeaderboardByTotalCoins.getHighScore());
-        }
-        return playerRepository.findAllByOrderByTotalCoinsDesc();
+        return playerRepository.findTop10ByOrderByTotalCoinsDesc();
     }
 
     public List<Player> getLeaderboardByTotalDistance() {
-        if (getLeaderboardByTotalDistance.getHighScore() != null) {
-            existingPlayer.setHighScore(getLeaderboardByTotalDistance.getHighScore());
-        }
-        return playerRepository.findAllByOrderByTotalDistanceTravelledDesc();
-    }
-
-    public void savePlayer(Player player1) {
-
-    }
-
-    public Player[] findAllPlayers() {
-        return null;
-    }
-
-    public boolean  isUsernameExist(String username) {
-        return playerRepository.findByUsername(username).isPresent();
+        return playerRepository.findTop10ByOrderByTotalDistanceTravelledDesc();
     }
 }
