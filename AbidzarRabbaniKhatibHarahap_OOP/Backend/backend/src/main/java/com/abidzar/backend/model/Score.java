@@ -43,7 +43,7 @@ public class Score {
     public void setScoreId(UUID scoreId) {
         this.scoreId = scoreId;
     }
-    public UUID getPlayerId() {
+    public static UUID getPlayerId() {
         return playerId;
     }
     public void setPlayerId(UUID playerId) {
