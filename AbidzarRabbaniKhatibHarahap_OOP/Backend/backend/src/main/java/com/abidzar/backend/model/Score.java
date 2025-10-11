@@ -25,9 +25,9 @@ public class Score {
     @CreationTimestamp
     @Column(name = "created_at", updatable = false)
     private LocalDateTime createdAt;
-    // Default constructor
+
     public Score() {}
-    // Constructor with required fields
+
     public Score(UUID playerId, Integer value, Integer coinsCollected, Integer
             distanceTravelled) {
         this.playerId = playerId;
@@ -35,7 +35,7 @@ public class Score {
         this.coinsCollected = coinsCollected;
         this.distanceTravelled = distanceTravelled;
     }
-    // Getters and Setters
+
     public UUID getScoreId() {
         return scoreId;
     }
