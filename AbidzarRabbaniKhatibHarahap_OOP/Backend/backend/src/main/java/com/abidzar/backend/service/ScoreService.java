@@ -1,13 +1,17 @@
 package com.abidzar.backend.service;
+
 import com.abidzar.backend.model.Score;
 import com.abidzar.backend.repository.ScoreRepository;
 import com.abidzar.backend.repository.PlayerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
+
 @Service
 public class ScoreService {
 
@@ -17,47 +21,92 @@ public class ScoreService {
     @Autowired
     private PlayerRepository playerRepository;
 
-    @Autowired
-    private PlayerService playerService;
+    @Transactional
+    public Score createScore(Score score) {
+        UUID playerId = score.getPlayer().getPlayerId();
+        if (!playerRepository.existsById(playerId)) {
+            throw new RuntimeException("Player not found with ID: " + playerId);
+        }
+        return scoreRepository.save(score);
+    }
+
+    public Optional<Score> getScoreById(UUID scoreId) {
+        return scoreRepository.findById(scoreId);
+    }
+
+    public List<Score> getAllScores() {
+        return scoreRepository.findAll();
+    }
+
+    public List<Score> getScoresByPlayerId(UUID playerId) {
+        return scoreRepository.findByPlayer_PlayerId(playerId);
+    }
+
+    public List<Score> getScoresByPlayerIdOrderByValue(UUID playerId) {
+        return scoreRepository.findByPlayer_PlayerIdOrderByValueDesc(playerId);
+    }
+
+    public List<Score> getLeaderboard(int limit) {
+        return scoreRepository.findTopScores(PageRequest.of(0, limit));
+    }
+
+    public Optional<Score> getHighestScoreByPlayerId(UUID playerId) {
+        List<Score> scores = scoreRepository.findHighestScoreByPlayerId(playerId);
+        return scores.isEmpty() ? Optional.empty() : Optional.of(scores.get(0));
+    }
+
+    public List<Score> getScoresAboveValue(Integer minValue) {
+        return scoreRepository.findByValueGreaterThan(minValue);
+    }
+
+    public List<Score> getRecentScores() {
+        return scoreRepository.findAllByOrderByCreatedAtDesc();
+    }
+
+    public Integer getTotalCoinsByPlayerId(UUID playerId) {
+        Integer total = scoreRepository.getTotalCoinsByPlayerId(playerId);
+        return total != null ? total : 0;
+    }
+
+    public Integer getTotalDistanceByPlayerId(UUID playerId) {
+        Integer total = scoreRepository.getTotalDistanceByPlayerId(playerId);
+        return total != null ? total : 0;
+    }
 
     @Transactional
-    public score CreateScore(Score score) {
-        UUID PlayerID = score.getPlayerID();
-        var player = playerRepository.findById(PlayerID).orElseThrow();
-        RuntimeException("Player do not found with ID :" + PlayerID);
+    public Score updateScore(UUID scoreId, Score updatedScore) {
+        Score existing = scoreRepository.findById(scoreId)
+                .orElseThrow(() -> new RuntimeException("Score not found with ID: " + scoreId));
 
-        Score SavedScore = scoreRepository.save(score);
-        PlayerService.updatePlayerStats(player);
+        if (updatedScore.getValue() != null) {
+            existing.setValue(updatedScore.getValue());
+        }
+        if (updatedScore.getCoinsCollected() != null) {
+            existing.setCoinsCollected(updatedScore.getCoinsCollected());
+        }
+        if (updatedScore.getDistanceTravelled() != null) {
+            existing.setDistanceTravelled(updatedScore.getDistanceTravelled());
+        }
 
-        return SavedScore;
+        return scoreRepository.save(existing);
     }
 
-    public Optional<Score> getScoreById(UUID PlayerID) {
-        return scoreRepository.findById(PlayerID);
+    @Transactional
+    public void deleteScore(UUID scoreId) {
+        if (!scoreRepository.existsById(scoreId)) {
+            throw new RuntimeException("Score not found with ID: " + scoreId);
+        }
+        scoreRepository.deleteById(scoreId);
     }
 
-    public List<Score>  getAllScores(Pageable pageable) {
-        return scoreRepository.findAll(pageable);
+    @Transactional
+    public void deleteScoresByPlayerId(UUID playerId) {
+        List<Score> scores = scoreRepository.findByPlayer_PlayerId(playerId);
+        scoreRepository.deleteAll(scores);
     }
 
-    public List<Score>getScoresByPlayerId(Pageable pageable) {
-        return scoreRepository.findAll(pageable);
+    public Optional<Score> findById(UUID scoreId) {
+        return getScoreById(scoreId);
     }
 
-    public List<Score>getScoresByPlayerIdOrderByValue(UUID PlayerID) {
-        return scoreRepository.findHighestScoreByPlayerId(PlayerID);
-    }
-
-    public List<Score>getLeaderboard(int limit) {
-        return scoreRepository.findTopScores(limit);
-    }
-
-    public List<Score>getHighestScoreByPlayerId(UUID PlayerID) {
-        return scoreRepository.findHighestScoreByPlayerId(PlayerID);
-    }
-
-    public List<Score>getScoresAboveValue(int minValue) {
-        return scoreRepository.findByValueGreaterThan()
-    }
 }
-
