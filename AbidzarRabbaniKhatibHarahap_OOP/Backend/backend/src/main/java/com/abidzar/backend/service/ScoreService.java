@@ -23,7 +23,11 @@ public class ScoreService {
 
     @Transactional
     public Score createScore(Score score) {
+<<<<<<< HEAD
         UUID playerId = score.getPlayer().getPlayerId();
+=======
+        UUID playerId = Score.getPlayerId();
+>>>>>>> 157d5952b55a9e95785b64a39cc02879fd6cdb6c
         if (!playerRepository.existsById(playerId)) {
             throw new RuntimeException("Player not found with ID: " + playerId);
         }

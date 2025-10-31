@@ -13,7 +13,6 @@ public interface PlayerRepository extends JpaRepository<Player, UUID> {
     Optional<Player> findByUsername(String username);
     boolean existsByUsername(String username);
 
-    // Leaderboard queries
     List<Player> findAllByOrderByHighScoreDesc();
     List<Player> findTop10ByOrderByTotalCoinsDesc();
     List<Player> findTop10ByOrderByTotalDistanceTravelledDesc();
