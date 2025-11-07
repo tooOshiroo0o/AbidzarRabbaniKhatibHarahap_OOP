@@ -4,32 +4,32 @@ import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 
-public class BaseObstacles {
-
-    protected final Vector2 position;
+public abstract class BaseObstacle {
+    protected Vector2 position;
     protected Rectangle collider;
     protected float length;
     protected final float WIDTH = 10f;
     protected boolean active = false;
 
-    public BaseObstacles(Vector2 startPosition, float length) {
+    public BaseObstacle(Vector2 startPosition, int length) {
         this.position = new Vector2(startPosition);
         this.length = length;
         updateCollider();
     }
 
-    public void initialize(Vector2 startPosition, float length) {
+    public void initialize(Vector2 startPosition, int length) {
         this.position.set(startPosition);
         this.length = length;
         updateCollider();
     }
 
-    public void render(ShapeRenderer renderer) {
-        drawShape(renderer);
+    public void render(ShapeRenderer shapeRenderer) {
+        if (!active) return;
+        drawShape(shapeRenderer);
     }
 
     public boolean isColliding(Rectangle playerCollider) {
-        return collider != null && collider.overlaps(playerCollider);
+        return active && collider != null && collider.overlaps(playerCollider);
     }
 
     public boolean isActive() {
@@ -37,23 +37,23 @@ public class BaseObstacles {
     }
 
     public boolean isOffScreenCamera(float cameraLeftEdge) {
-        return position.x + length < cameraLeftEdge;
+
+        return (position.x + getRenderWidth()) < cameraLeftEdge;
     }
 
-    protected void updateCollider() { }
+    protected abstract void updateCollider();
 
-    protected void drawShape(ShapeRenderer shapeRenderer) { }
+    protected abstract void drawShape(ShapeRenderer shapeRenderer);
 
-    public float getRenderWidth() {
-        return WIDTH;
-    }
+     public abstract float getRenderWidth();
+
 
     public void setActive(boolean active) {
         this.active = active;
     }
 
     public void setPosition(float x, float y) {
-        position.set(x, y);
+        this.position.set(x, y);
         updateCollider();
     }
 
@@ -61,4 +61,7 @@ public class BaseObstacles {
         return position;
     }
 
+    public Rectangle getCollider() {
+        return collider;
+    }
 }
