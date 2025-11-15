@@ -1,5 +1,6 @@
 package com.abidzar.frontend;
 
+import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 
@@ -78,5 +79,8 @@ public class Player {
             position.y = screenHeight - height;
             velocity.y = 0;
         }
+    }
+
+    public void renderShape(ShapeRenderer renderer) {
     }
 }

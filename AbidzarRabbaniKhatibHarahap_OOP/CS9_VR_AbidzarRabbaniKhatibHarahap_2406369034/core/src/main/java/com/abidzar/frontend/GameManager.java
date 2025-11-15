@@ -1,5 +1,7 @@
 package com.abidzar.frontend;
 
+import com.abidzar.frontend.observers.ScoreUIObserver;
+
 public class GameManager {
     private static GameManager instance;
     private int score = 0;
@@ -21,5 +23,9 @@ public class GameManager {
 
     public void setScore(int s) {
         score = s;
+    }
+
+    public void addObserver(ScoreUIObserver scoreUIObserver) {
+
     }
 }
