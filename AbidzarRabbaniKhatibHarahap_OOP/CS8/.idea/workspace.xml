@@ -4,7 +4,43 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4841cb00-39cd-418a-80bd-cef486029ad7" name="Changes" comment="" />
+    <list default="true" id="4841cb00-39cd-418a-80bd-cef486029ad7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../CS10_AbidzarRabbaniKhatibHarahap_2406369034/core/src/main/java/com/abidzar/frontend/states/DifficultyTransitionState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CS10_AbidzarRabbaniKhatibHarahap_2406369034/core/src/main/java/com/abidzar/frontend/states/PlayingState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CS10_AbidzarRabbaniKhatibHarahap_2406369034/core/src/main/java/com/abidzar/frontend/strategies/DifficultyStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CS10_AbidzarRabbaniKhatibHarahap_2406369034/core/src/main/java/com/abidzar/frontend/strategies/EasyDifficultyStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CS10_AbidzarRabbaniKhatibHarahap_2406369034/core/src/main/java/com/abidzar/frontend/strategies/HardDifficultyStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CS10_AbidzarRabbaniKhatibHarahap_2406369034/core/src/main/java/com/abidzar/frontend/strategies/MediumDifficultyStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/core/src/main/java/com/abidzar/frontend/Background.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/com/abidzar/frontend/Background.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/core/src/main/java/com/abidzar/frontend/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/com/abidzar/frontend/GameManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/core/src/main/java/com/abidzar/frontend/Ground.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/com/abidzar/frontend/Ground.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/core/src/main/java/com/abidzar/frontend/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/com/abidzar/frontend/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/core/src/main/java/com/abidzar/frontend/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/com/abidzar/frontend/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/core/src/main/java/com/abidzar/frontend/command/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/com/abidzar/frontend/command/Command.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/core/src/main/java/com/abidzar/frontend/command/JetPackCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/com/abidzar/frontend/command/JetPackCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/core/src/main/java/com/abidzar/frontend/command/RestartCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/com/abidzar/frontend/command/RestartCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/core/src/main/java/com/abidzar/frontend/factories/HomingMissileCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/com/abidzar/frontend/factories/HomingMissileCreator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/core/src/main/java/com/abidzar/frontend/factories/HorizontalLaserCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/com/abidzar/frontend/factories/HorizontalLaserCreator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/core/src/main/java/com/abidzar/frontend/factories/ObstacleFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/com/abidzar/frontend/factories/ObstacleFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/core/src/main/java/com/abidzar/frontend/factories/VerticalLaserCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/com/abidzar/frontend/factories/VerticalLaserCreator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/core/src/main/java/com/abidzar/frontend/observers/Observer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/com/abidzar/frontend/observers/Observer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/core/src/main/java/com/abidzar/frontend/observers/ScoreManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/com/abidzar/frontend/observers/ScoreManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/core/src/main/java/com/abidzar/frontend/observers/ScoreUIObserver.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/com/abidzar/frontend/observers/ScoreUIObserver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/core/src/main/java/com/abidzar/frontend/observers/Subject.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/com/abidzar/frontend/observers/Subject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/core/src/main/java/com/abidzar/frontend/obstacles/BaseObstacle.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/com/abidzar/frontend/obstacles/BaseObstacle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/core/src/main/java/com/abidzar/frontend/obstacles/HomingMissile.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/com/abidzar/frontend/obstacles/HomingMissile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/core/src/main/java/com/abidzar/frontend/obstacles/HorizontalLaser.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/com/abidzar/frontend/obstacles/HorizontalLaser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/core/src/main/java/com/abidzar/frontend/obstacles/VerticalLaser.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/com/abidzar/frontend/obstacles/VerticalLaser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/core/src/main/java/com/abidzar/frontend/pools/HomingMissilePool.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/com/abidzar/frontend/pools/HomingMissilePool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/core/src/main/java/com/abidzar/frontend/pools/HorizontalLaserPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/com/abidzar/frontend/pools/HorizontalLaserPool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/core/src/main/java/com/abidzar/frontend/pools/ObjectPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/com/abidzar/frontend/pools/ObjectPool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/core/src/main/java/com/abidzar/frontend/pools/VerticalLaserPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/com/abidzar/frontend/pools/VerticalLaserPool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/core/src/main/java/com/abidzar/frontend/states/GameOverState.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/com/abidzar/frontend/states/GameOverState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/core/src/main/java/com/abidzar/frontend/states/GameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/com/abidzar/frontend/states/GameState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/core/src/main/java/com/abidzar/frontend/states/GameStateManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/com/abidzar/frontend/states/GameStateManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/core/src/main/java/com/abidzar/frontend/states/SpriteBatch.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/CS9_VR_AbidzarRabbaniKhatibHarahap_2406369034/com/abidzar/frontend/states/SpriteBatch.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -34,22 +70,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Gradle.CS8:lwjgl3 [:lwjgl3:com.abidzar.frontend.lwjgl3.Lwjgl3Launcher.main()].executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Gradle.CS8:lwjgl3 [:lwjgl3:com.abidzar.frontend.lwjgl3.Lwjgl3Launcher.main()].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/User/OneDrive/Documents/OOP Intellij/AbidzarRabbaniKhatibHarahap_OOP/CS8",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="openjdk-24" />
@@ -87,6 +124,7 @@
       <updated>1762523606489</updated>
       <workItem from="1762523608025" duration="3169000" />
       <workItem from="1763090559684" duration="2154000" />
+      <workItem from="1763744884879" duration="40000" />
     </task>
     <servers />
   </component>
